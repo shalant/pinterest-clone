@@ -1,5 +1,10 @@
 import React from 'react';
-import '../styles/modal_styles.css'
+
+import '../styles/modal_styles.css';
+
+function upload_img() {
+
+}
 
 function Modal() {
     return (
@@ -24,7 +29,7 @@ function Modal() {
                                 </div>
                             </div>
 
-                            <input type='file' name='upload_img' id='upload_img' value='' />
+                            <input onChange={upload_img} type='file' name='upload_img' id='upload_img' value='' />
                         </label>
 
                         <div className='modals_pin'>
