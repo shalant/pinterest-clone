@@ -9,7 +9,7 @@ function upload_img(event, pinDetails, setPinDetails, setShowLabel, setShowModal
             reader.onload = function() {
                 setPinDetails({
                     ...pinDetails,
-                    img_blob: (reader.result)
+                    img_blob: reader.result
                 });
                 setShowLabel(false);
                 setShowModalPin(true);
@@ -35,7 +35,7 @@ function check_size(event) {
     image.style.opacity = 1;
 }
 
-function save_pin(pinDetails) {
+function save_pin(pinDetails, add_pin) {
     const users_data = {
         ...pinDetails,
         author: 'Jack',
@@ -46,10 +46,10 @@ function save_pin(pinDetails) {
         pin_size: document.querySelector('#pin_size').value,
     }
 
-    console.log(users_data);
+    add_pin(users_data);
 }
 
-function Modal() {
+function Modal(props) {
     const [pinDetails, setPinDetails] = useState({
         author: '',
         board: '',
@@ -118,7 +118,7 @@ function Modal() {
                                 <option value='medium'>medium</option>
                                 <option value='large'>large</option>
                             </select>
-                            <div onClick={() => save_pin(pinDetails)} className='save_pin'>Save</div>
+                            <div onClick={() => save_pin(pinDetails, props.add_pin)} className='save_pin'>Save</div>
                         </div>
                     </div>
 
