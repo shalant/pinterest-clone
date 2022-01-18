@@ -158,6 +158,14 @@
 }
 
 .pin_image img {
+    opacity: 0;
+}
+
+.pin_max_width {
+    max-width: 100%;
+}
+
+.pin_max_height {
     max-height: 100%;
 }
 
