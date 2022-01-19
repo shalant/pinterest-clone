@@ -40,7 +40,7 @@ function Pin(props) {
         //     <input onChange={event => upload_img(event, setPinImage)} type='file' name='picture' id='picture' value='' />
             
         //     <div className='card'>
-            <div className={`card card_${props.pinDetails.pin_}`}>
+            <div className={`card card_${props.pinDetails.pin_size}`}>
                 <div className='pin_title'>{props.pinDetails.title}</div>
 
                 <div className='pin_modal'>
