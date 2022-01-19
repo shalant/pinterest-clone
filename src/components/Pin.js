@@ -36,10 +36,11 @@ function check_size(event) {
 function Pin(props) {
     // const [pinImage, setPinImage] = useState();
     return (
-        <div>
-            {/* <input onChange={event => upload_img(event, setPinImage)} type='file' name='picture' id='picture' value='' /> */}
+        // <div>
+        //     <input onChange={event => upload_img(event, setPinImage)} type='file' name='picture' id='picture' value='' />
             
-            <div className='card'>
+        //     <div className='card'>
+            <div className={`card card_${props.pinDetails.pin_}`}>
                 <div className='pin_title'>{props.pinDetails.title}</div>
 
                 <div className='pin_modal'>
@@ -60,16 +61,17 @@ function Pin(props) {
                         </div>
 
                         <div className='pint_mock_icon_container'>
-                            <img onLoad={check_size} src='./images/ellipse.png' alt='edit' className='pint_mock_icon' />
+                            <img  src='./images/ellipse.png' alt='edit' className='pint_mock_icon' />
                         </div>
                     </div>
                 </div>
 
                 <div className='pin_image'>
-                    <img src={props.pinDetails.img_blob} alt='pin_image' />
+                    <img onLoad={check_size} src={props.pinDetails.img_blob} alt='pin_image' />
                 </div>
             </div>
-        </div>
+        //     </div>
+        // </div>
     )
 }
 
